@@ -1,0 +1,144 @@
+@import "./components/styles/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $background-color;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+input[type="text"] {
+  border: 1px solid $border-color;
+  background-color: $background-color;
+  color: $font-color;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 94%;
+  max-width: 300px;
+}
+
+button {
+  font-family: $font-family;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: $button-background-color;
+  color: $button-font-color;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: darken($button-background-color, 10%);
+  }
+}
+
+.gif-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 24px 10px;
+
+  img {
+    margin: 10px;
+  }
+}
+
+.random-gif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 100vh;
+
+  img {
+    margin-bottom: 1rem;
+    width: 420px;
+    margin: 15px;
+  }
+
+  button {
+    margin-top: 1rem;
+    border-radius: 3px;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: $font-color;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($font-color, 20%);
+    }
+
+    & + a {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.show-more {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 668px) {
+  .random-gif-container {
+    height: auto;
+  }
+
+  .random-gif-container img {
+    width: -webkit-fill-available;
+    margin: 15px;
+  }
+}
+
+.search-bar {
+  .search-input {
+    position: relative;
+    display: inline-block;
+
+    input[type="text"] {
+      padding-right: 24px;
+      border-radius: 3px;
+    }
+
+    .clear-icon {
+      position: absolute;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+}
